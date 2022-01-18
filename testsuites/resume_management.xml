@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Manage Resumes Test Cases">
+    <parameter name="environment" value="staging"/>
+    <listeners>
+        <listener class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+
+    <test name="Verify Job Seeker is able to create resume using Upload Resume File option">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="createResumeUsingUploadFileOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to create resume using Build Resume Online option">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="createResumeUsingResumeBuilder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to view Public Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="viewPublicResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Job Seeker is able to Edit Public Resume from View Resume Page">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="editPublicResumeOnViewPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Print Public Resume from View Resume Page">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="printPublicResumeOnViewPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Email Public Resume from View Resume Page">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="emailPublicResumeOnViewPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to edit Public Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="editPublicResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Email Public Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="emailPublicResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to generate link for Public Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="linkPublicResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to click on 'Free Evaluation' link for Public Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="freeEvaluationPublicResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to unpublish the public resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="unpublishPublicResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to view private Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="viewPrivateResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Edit Private Resume from View Resume Page">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="editPrivateResumeOnViewPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Print Private Resume from View Resume Page">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="printPrivateResumeOnViewPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Email Private Resume from View Resume Page">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="emailPrivateResumeOnViewPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to edit Private Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="editPrivateResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Email Private Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="emailPrivateResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to generate link for Private Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="linkPrivateResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to click on 'Free Evaluation' link for Private Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="freeEvaluationPrivateResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to publish the private resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="publishPrivateResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Delete the public resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="deletePublicResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Delete the private resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="deletePrivateResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to see incomplete resumes">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="incompleteResumes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to edit the incomplete resumes">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="editIncompleteResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to delete the incomplete resumes">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="deleteIncompleteResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cover Letter -->
+    <test name="Verify Job Seeker is able to create the Cover Letter">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="createCoverLetter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to edit the Cover Letter">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="editCoverLetter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to delete the Cover Letter">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.manageresume.ManageResumeTest">
+                <methods>
+                    <include name="deleteCoverLetter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>	

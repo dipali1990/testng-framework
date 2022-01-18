@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Search for Legacy View Test Cases">
+	<parameter name="environment" value="staging"/>
+	<listeners>
+		<listener class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+		<listener class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+	</listeners>
+	<test name="Verify if Employer is able to Post a Job without Company Logo">
+        <parameter name="siteID" value="22457"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.postajob.JobPostingTest">
+                <methods>
+                    <include name="postAJob"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Employer is not able to Post a Job without Job Description">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.postajob.JobPostingTest">
+                <methods>
+                    <include name="jobPostingWithoutDescription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

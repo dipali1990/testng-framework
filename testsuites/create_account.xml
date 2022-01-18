@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Account Creation Test Cases">
+    <parameter name="environment" value="staging"/>
+    <parameter name="siteID" value="23014"/>
+    <listeners>
+        <listener class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+    <test name="Job Seeker Account Creation">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.createaccount.CreateAccountTest">
+                <methods>
+                    <include name="createAccount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Employer Account Creation - Employer">
+        <parameter name="orgType" value="Employer"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.createaccount.CreateAccountTest">
+                <methods>
+                    <include name="createAccount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Employer Account Creation - Ad Agency">
+        <parameter name="orgType" value="Ad Agency"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.createaccount.CreateAccountTest">
+                <methods>
+                    <include name="createAccount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Employer Account Creation - Recruiting Firm">
+        <parameter name="orgType" value="Recruiting Firm"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.createaccount.CreateAccountTest">
+                <methods>
+                    <include name="createAccount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

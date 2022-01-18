@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Search for Legacy View Test Cases">
+    <parameter name="environment" value="staging"/>
+    <listeners>
+        <listener class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+    <!--21926-->
+    <test name="Verify if Job Seeker can select location from the dropdown on Home Page and search Jobs">
+        <parameter name="siteID" value="23048"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.LegacyJobSearchTest">
+                <methods>
+                    <include name="jobSearchByLocationDropdownFromHomePage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Job Seeker can select location from the dropdown on Job Search Page and search Jobs">
+        <parameter name="siteID" value="23048"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.LegacyJobSearchTest">
+                <methods>
+                    <include name="jobSearchByLocationDropdownFromJobSearchPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Job Seeker is prompted to login while saving the job ">
+        <parameter name="siteID" value="23013"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.LegacyJobSearchTest">
+                <methods>
+                    <include name="saveJobBeforeLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Logged-In Job Seeker is able to save the job ">
+        <parameter name="siteID" value="23013"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.LegacyJobSearchTest">
+                <methods>
+                    <include name="saveJobAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

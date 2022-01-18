@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Search for Pane View Test Cases">
+    <parameter name="environment" value="staging"/>
+    <parameter name="siteID" value="22457"/>
+    <listeners>
+        <listener class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+    <test name="Verify if Tool Tip is Displayed on Job Search Page When clicked on '?' Icon ">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="jobSearchToolTip"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Filter on Job Search Page ">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="jobSearchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to expand 'Applied Filter' row">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="showAllApplyAllFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to Remove Filters">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="removeFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Job Seeker is able to apply and remove filter after login">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="applyFilterAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Mini Footer">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="miniFooter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Mandatory Details (Job Title, Company Name, Location, Date Posted ) on Job Result Panel">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="verifyMandatoryInformationJobDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Save Job Before Login">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="saveJobBeforeLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Save Job after Login">
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="saveJobAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

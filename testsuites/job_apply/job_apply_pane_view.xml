@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Search for Pane View Test Cases">
+    <parameter name="environment" value="staging"/>
+    <listeners>
+        <listener class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+    <test name="Verify if Job Seeker is able to search and apply using Job Board Option">
+        <parameter name="siteID" value="23014"/>
+        <parameter name="applyMethod" value="Job Board"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="jobSearchAndApply"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Job Seeker is able to search and apply using Email Option">
+        <parameter name="siteID" value="22457"/>
+        <parameter name="applyMethod" value="Email"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.jobsearch.JobSearchPaneViewTest">
+                <methods>
+                    <include name="jobSearchAndApply"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

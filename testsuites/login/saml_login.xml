@@ -1,0 +1,78 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SAML SSO-Login">
+    <parameter name="environment" value="staging"/>
+    <listeners>
+        <listener
+                class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener
+                class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+
+    <!-- Job Seeker -->
+    <test name="SAML JobSeeker (Dual Login) : Verify JobSeeker is able to Login as a Member using SAML SSO ">
+        <parameter name="siteID" value="518"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.login.SamlLoginTest">
+                <methods>
+                    <include name="jsSamlDualLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="JobSeeker: Verify 'Validation Required' Message displays after Login when Validation is On using SAML SSO ">
+        <parameter name="siteID" value="23015"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.login.SamlLoginTest">
+                <methods>
+                    <include name="jsSamlLogin_MemberValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Job Seeker is able to login via Complete SAML SSO ">
+        <parameter name="siteID" value="22292"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.login.SamlLoginTest">
+                <methods>
+                    <include name="jsSamlLogin_CompleteSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Employer -->
+    <test name="SAML Employer (Dual Login) : Verify Employer is able to Login as a Member using SAML SSO ">
+        <parameter name="siteID" value="518"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.login.SamlLoginTest">
+                <methods>
+                    <include name="empSamlDualLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Employer: Verify 'Validation Required' Message displays after Login when Validation is On using SAML SSO ">
+        <parameter name="siteID" value="23015"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.login.SamlLoginTest">
+                <methods>
+                    <include name="empSamlLogin_MemberValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Employer is able to login via Complete SAML SSO ">
+        <parameter name="siteID" value="22292"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.login.SamlLoginTest">
+                <methods>
+                    <include name="empSamlLogin_CompleteSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

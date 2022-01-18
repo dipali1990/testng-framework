@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Majestics-YM Careers Test Suite">
+	<suite-files>
+		<suite-file path="job_posting.xml" />
+		<suite-file path="job_search/job_search_legacy_view.xml" />
+		<suite-file path="resume_bank.xml" />
+		<suite-file path="resume_management.xml" />
+	</suite-files>
+</suite>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Traditional Login">
+    <parameter name="environment" value="staging"/>
+    <listeners>
+        <listener
+                class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener
+                class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+
+    <!-- Job Seeker -->
+    <test name="Verify JobSeeker is able to Login via Traditional Login">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.login.StandardLoginTest">
+                <methods>
+                    <include name="standardLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify JobSeeker is able to Login as Non-Member when Dual Signin is On">
+        <parameter name="siteID" value="518"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.login.StandardLoginTest">
+                <methods>
+                    <include name="dualSignInNonMemberLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Employer -->
+    <test name="Verify Employer is able to Login via Traditional Login">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.login.StandardLoginTest">
+                <methods>
+                    <include name="standardLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Employer is able to Login as Non-Member when Dual Signin is On">
+        <parameter name="siteID" value="518"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.login.StandardLoginTest">
+                <methods>
+                    <include name="dualSignInNonMemberLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

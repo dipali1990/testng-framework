@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Resume Bank Test Suite">
+    <parameter name="environment" value="staging"/>
+    <listeners>
+        <listener class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+    <test name="Verify Tooltip is displayed on the Resume Bank Page">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="verifyToolTip"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Employer is able to apply 'Bookmarked' filter">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="filterByBookmarkedOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Employer is able to apply 'Viewed' filter">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="filterByViewedOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Employer is able to apply 'Country' filter">
+        <parameter name="siteID" value="23014"/>
+        <parameter name="country" value="United States,Canada"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="filterByCountryOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Employer is able to apply 'State' filter">
+        <parameter name="siteID" value="23014"/>
+        <parameter name="state" value="California,New York"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="filterByStateOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Employer is able to apply 'Last Updated' filter">
+        <parameter name="siteID" value="23014"/>
+        <parameter name="lastUpdated" value="Within the last week"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="filterByLastUpdatedOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify 'Save Search' button is disabled before applying any filter">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="disabledSaveSearchButton"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if employer is able to save the search">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="saveFilterSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Employer prompted to login while viewing the resume">
+        <parameter name="siteID" value="23013"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="viewResumeEmpNotLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if employer is able to buy the resume">
+        <parameter name="siteID" value="23048"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="buyResumeFromResumeBank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Employer is able to Print the resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="resumeBankPrintResume"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Employer is able to Download the Resume">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="resumeBankPdfFormat"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify if Employer is able to Share the Resume with Colleagues">
+        <parameter name="siteID" value="23014"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.resumebank.ResumeBankTest">
+                <methods>
+                    <include name="resumeBankFwdToColleague"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

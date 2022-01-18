@@ -1,0 +1,56 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Abila SSO - Login">
+    <parameter name="environment" value="staging"/>
+    <listeners>
+        <listener
+                class-name="com.ymcareers.webapp.listener.AnnotationTransformer"/>
+        <listener
+                class-name="com.ymcareers.webapp.listener.EnvReaderListener"/>
+    </listeners>
+
+    <!-- Job Seeker -->
+    <test name="Abila JobSeeker (Dual Login) : Verify JobSeeker is able to Login as a Member using Abila SSO ">
+        <parameter name="siteID" value="21953"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.login.AbilaLoginTest">
+                <methods>
+                    <include name="jsAbilaDualLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Job Seeker is able to login via Complete Abila SSO ">
+        <parameter name="siteID" value="15065"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.jobseeker.login.AbilaLoginTest">
+                <methods>
+                    <include name="jsAbilaLogin_CompleteSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Employer -->
+    <test name="Abila Employer (Dual Login) : Verify Employer is able to Login as a Member using SAML SSO ">
+        <parameter name="siteID" value="21953"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.login.AbilaLoginTest">
+                <methods>
+                    <include name="empAbilaDualLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Employer is able to login via Complete Abila SSO ">
+        <parameter name="siteID" value="15065"/>
+        <classes>
+            <class name="com.ymcareers.webapp.tests.employer.login.AbilaLoginTest">
+                <methods>
+                    <include name="empAbilaLogin_CompleteSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
